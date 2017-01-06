@@ -5,7 +5,6 @@ import java.util.Scanner;
  */
 public class BasicArithmetic {
     public static void main(String[] args) {
-
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Welcome to an input calculator!");
@@ -35,9 +34,10 @@ public class BasicArithmetic {
 
             scan.nextLine();
 
-        } while (userWantsToContinue.equalsIgnoreCase("Yes")
-                || userWantsToContinue.equalsIgnoreCase("y"));
-        System.out.println("Catch ya later!");
+        } while (userWantsToContinue.equalsIgnoreCase("Yes") || userWantsToContinue.equalsIgnoreCase("y"));
+        {
+            System.out.println("Catch ya later!");
+        }
     }
 
     public static String getOperation(Scanner scan) {
@@ -68,7 +68,7 @@ public class BasicArithmetic {
             System.out.println("You can't divide by zero, mate!");
             return 0;
         }
-        return (double) x / y;
+        return (double) x / y; //
     }
     //        Add a modulus function that finds the modulus of two numbers.
     public static int calculateModulus(int x, int y) {

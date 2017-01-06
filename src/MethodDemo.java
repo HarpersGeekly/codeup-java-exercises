@@ -10,6 +10,7 @@ public class MethodDemo {
         String yourName = getName(scan);
         String course = getCourse();
         int favoriteNumber = getFavoriteNumber(scan);
+        String greeting = sayHello(favoriteNumber);
 
         System.out.println("Hi, " + yourName + ", welcome to " + course);
 
@@ -19,7 +20,6 @@ public class MethodDemo {
             System.out.println("I see you've been here before, " + yourName + ", welcome back!");
         }
 
-        String greeting = sayHello(favoriteNumber);
         System.out.println(greeting);
 
     }
