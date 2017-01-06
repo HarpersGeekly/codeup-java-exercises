@@ -8,8 +8,8 @@ public class BeerSong {
 
         while (numberOfBeers > 0) {
 
-            System.out.println(numberOfBeers + " " + word + " of beer on the wall!");
-            System.out.println(numberOfBeers + " " + word + " of beer!");
+            System.out.println(numberOfBeers + " " + word + " of beer on the wall...");
+            System.out.println(numberOfBeers + " " + word + " of beer...");
             System.out.println("Take one down,");
             System.out.println("Pass it around,");
             numberOfBeers = numberOfBeers - 1;
