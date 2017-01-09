@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class DiceRoll {
     public static void main(String[] args) {
-        System.out.println("Welcome to the Dice Roll App!");
+        System.out.println("Welcome to the Die Rolling App!");
 
         playGame();
 
@@ -14,7 +14,7 @@ public class DiceRoll {
     public static void playGame() {
         Scanner scan = new Scanner(System.in);
 
-        boolean playAgain = false;
+        String playAgain;
 
         do {
 
@@ -27,14 +27,13 @@ public class DiceRoll {
 
             System.out.println("You rolled a " + dieOne + " and a " + dieTwo + ".");
             System.out.println("Together, your total is " + (dieOne + dieTwo));
+
             System.out.println("Want to roll the dice again?");
+            playAgain = scan.next();
             scan.nextLine();
-            if (scan.nextLine().equalsIgnoreCase("yes") || scan.nextLine().equalsIgnoreCase("y")) {
-                playAgain = true;
-            } else {
-                System.out.println("See ya later");
-            }
-        } while (playAgain);
+
+        } while (playAgain.equalsIgnoreCase("yes") || playAgain.equalsIgnoreCase("y"));
+        System.out.println("See ya later");
     }
 
 
