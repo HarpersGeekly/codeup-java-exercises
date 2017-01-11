@@ -13,7 +13,6 @@ public class DiceRollingApp {
 
         do {
             rollTwoDice(scan);
-
             System.out.println("Do you want to continue? Type 'yes' or 'no'");
             userChoice = scan.next();
 
@@ -38,6 +37,5 @@ public class DiceRollingApp {
 
         System.out.println("You rolled a " + firstDie.currentFaceValue + " and a " + secondDie.currentFaceValue + ".");
         System.out.println("This is a total of " + (firstDie.currentFaceValue + secondDie.currentFaceValue));
-
     }
 }
