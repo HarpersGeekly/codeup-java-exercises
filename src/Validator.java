@@ -1,3 +1,4 @@
+import java.util.IllegalFormatException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -16,6 +17,20 @@ public class Validator {
 //        this.intInput = intInput;
 //        this.doubleInput = doubleInput;
 //    }
+
+    public String getString(String prompt) {
+        System.out.println(prompt);
+        String stringInput;
+
+        try {
+            stringInput = scan.nextLine();
+        } catch (IllegalArgumentException e ) {
+            System.out.println("ERROR -- Input must be valid");
+            scan.next();
+            return getString(prompt);
+        }
+        return stringInput;
+    }
 
     public int getInt(String prompt) {
         System.out.println(prompt);
@@ -95,10 +110,12 @@ public class Validator {
         return doubleInput;
     }
 
+    public void setTimeout(int milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
-//    public String getRequiredString(String prompt) {
-//        System.out.println(prompt);
-//        stringInput = scan.nextLine();
-//        return stringInput;
-//    }
 }
