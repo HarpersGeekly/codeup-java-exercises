@@ -23,7 +23,7 @@ public class Validator {
         String stringInput;
 
         try {
-            stringInput = scan.nextLine();
+            stringInput = scan.next();
         } catch (IllegalArgumentException e ) {
             System.out.println("ERROR -- Input must be valid");
             scan.next();
@@ -50,21 +50,12 @@ public class Validator {
         int intInput = getInt(prompt);
 
         try {
-//            System.out.println(prompt);
             if (intInput < min || intInput > max) {
                 throw new IllegalArgumentException("ERROR -- Integer is out of range between " + min + " and " + max);
             }
-//        } catch (InputMismatchException e) {
-//            System.out.println("ERROR -- Input must be an integer.");
-//            scan.nextLine();
-//            getIntWithinRange(prompt, min, max);
         } catch (IllegalStateException | IllegalArgumentException e) { //listening for either of these exceptions.
-//            if (intInput < min) {
-//                System.out.println("ERROR -- Number must be greater than " + min);
-//            } else if (intInput > max) {
-//                System.out.println("ERROR -- Number must be less than " + max);
-//            }
             System.out.println(e.getMessage());
+
             return getIntWithinRange(prompt, min, max);
         }
         return intInput;
