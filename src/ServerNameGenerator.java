@@ -12,7 +12,7 @@ public class ServerNameGenerator {
 //        Another with at least 10 nouns:
 
         String[] adjectivesArray = {"short", "tall", "old", "young", "important", "fast", "slow", "big", "dumb", "wise"};
-        String[] nounsArray = {"Bus", "Airplane", "Train", "Tree", "Animal", "Person", "London", "Lightning", "Apple", "Banana"};
+        String[] nounsArray = {"Bus", "Airplane", "Train", "Tree", "Animal", "TestOOP.Person", "London", "Lightning", "Apple", "Banana"};
 
         System.out.println("Welcome to the Server Name Generator");
         System.out.println("Your random name is: " + adjectivesArray[generateRandomNumber()] + " " + nounsArray[generateRandomNumber()]);

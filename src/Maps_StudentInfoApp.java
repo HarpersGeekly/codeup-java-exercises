@@ -1,3 +1,5 @@
+import Validator.Validator;
+
 import java.util.*; // uses all util's
 
 /**
@@ -7,7 +9,7 @@ public class Maps_StudentInfoApp {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Validator validator = new Validator();
+        Validator validator = new Validator(scan);
         List<Map> studentList = new ArrayList();
 
         System.out.println("Welcome to the Student Info App");
@@ -16,16 +18,18 @@ public class Maps_StudentInfoApp {
         do {
             studentList.add(newStudent(validator));
             System.out.println("Do you want to enter a new student? Yes/No");
+            scan.nextLine();
             anotherStudentToEnter = scan.nextLine();
+
         } while (anotherStudentToEnter.equalsIgnoreCase("yes") || anotherStudentToEnter.equalsIgnoreCase("y"));
         System.out.println("Goodbye");
-        System.out.println(studentList);
+//        System.out.println(studentList);
         System.out.println("The last name of the first person you entered is " + studentList.get(0).get("lastName"));
         System.out.println("Number of students entered is " + studentList.size());
         int totalScores = 0;
         for (int i = 0; i < studentList.size(); i++) {
             totalScores += (int) studentList.get(i).get("studentScore");
-            System.out.println(totalScores);
+            System.out.println("Totaling scores: " + totalScores);
         }
         double averageTotalScore = totalScores / studentList.size();
         System.out.println("The average test score of the class is: " + averageTotalScore);

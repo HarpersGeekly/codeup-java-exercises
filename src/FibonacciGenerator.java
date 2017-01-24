@@ -1,3 +1,5 @@
+import Validator.Validator;
+
 import java.util.Scanner;
 
 /**
@@ -6,18 +8,21 @@ import java.util.Scanner;
 public class FibonacciGenerator {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Validator validator = new Validator();
+        Validator validator = new Validator(scan);
         System.out.println(" =========================================== \n Welcome to the Fibonacci Number Generator! \n ===========================================");
         validator.setTimeout(1000);
         String prompt = ("To what number would you like the Fibonacci sequence to go up to?: ");
         int max = validator.getInt(prompt);
+        scan.nextLine();
         System.out.println("The Fibonacci Sequence up to " + max + ":");
         String userContinue;
+
 
         do {
             getFibonacciSequence(validator, max);
             System.out.println("Would you like to try again? Yes/No");
-            userContinue = scan.next();
+            userContinue = scan.nextLine();
+
         } while (userContinue.equalsIgnoreCase("yes") || userContinue.equalsIgnoreCase("y"));
         System.out.println("Thanks, Goodbye");
     }

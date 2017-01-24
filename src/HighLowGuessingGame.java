@@ -1,3 +1,5 @@
+import Validator.Validator;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -6,9 +8,8 @@ import java.util.Scanner;
  */
 public class HighLowGuessingGame {
     public static void main(String[] args) {
-        Validator validator = new Validator();
         Scanner scan = new Scanner(System.in);
-
+        Validator validator = new Validator(scan);
         System.out.println("Welcome to the High Low Guessing Game!\n" + "======================================");
 
         int min = 1;
@@ -19,12 +20,17 @@ public class HighLowGuessingGame {
 //          System.out.println(randomNumber);
 
         do {
+
             System.out.println("Enter a number between 1 and 100:");
             String prompt = "";
+            System.out.println(randomNumber);
             compareUserGuess(validator, min, max, randomNumber, counter, prompt);
+
+            scan.nextLine();
             System.out.println("Would you like to play again? Yes/No\n" + "=====================================");
             userWantsToContinue = scan.nextLine();
             randomNumber = generateRandomNumber();
+
         } while (userWantsToContinue.equalsIgnoreCase("yes") || userWantsToContinue.equalsIgnoreCase("y"));
         System.out.println("Thanks for playing! Take care. ");
     }
